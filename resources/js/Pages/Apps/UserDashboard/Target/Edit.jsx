@@ -27,7 +27,7 @@ export default function Edit() {
     };
 
     const handleCancel = () => {
-        router.visit(route('apps.user.target'), {
+        router.visit(route('apps.user.dashboard'), {
             preserveState: false,
             preserveScroll: false
         });
@@ -144,7 +144,7 @@ export default function Edit() {
                             value={data.judul_target}
                             onChange={e => setData('judul_target', e.target.value)}
                             errors={errors.judul_target}
-                            className="border border-[#58177F] border-opacity-50 w-[382px] h-[42px]"
+                            className="border border-[#58177F] w-[382px] h-[42px]"
                         />
                         <Input
                             type="date"
@@ -154,7 +154,7 @@ export default function Edit() {
                             onChange={e => setData('tanggal_target', e.target.value)}
                             errors={errors.tanggal_target}
                             icon={<IconCalendar size={26} />}
-                            className="border border-[#58177F] border-opacity-50 w-[382px] h-[42px]"
+                            className="border border-[#58177F] w-[382px] h-[42px]"
                         />
                         
                         <div className="space-y-2">
@@ -175,7 +175,7 @@ export default function Edit() {
                                             }));
                                         }}
                                         errors={errors.min_target}
-                                        className="border border-[#58177F] border-opacity-50 w-[180px] h-[40px]"
+                                        className="border border-[#58177F] w-[180px] h-[40px]"
                                     />
                                 </div>
                                 <div>
@@ -193,7 +193,7 @@ export default function Edit() {
                                             }));
                                         }}
                                         errors={errors.max_target}
-                                        className="border border-[#58177F] border-opacity-50 w-[180px] h-[40px]"
+                                        className="border border-[#58177F] w-[180px] h-[40px]"
                                     />
                                 </div>
                             </div>

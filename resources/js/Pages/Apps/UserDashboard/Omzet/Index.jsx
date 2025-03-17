@@ -44,7 +44,7 @@ export default function Index({ products }) {
                                 className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-[#DD661D80]"
                             >
                                 <div className="p-4 flex space-x-4">
-                                    <div className="flex-shrink-0 w-[111px] h-[111px] bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden">
+                                    <div className="flex-shrink-0 w-[111px] h-[111px] bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden border border-[#DD661D80]">
                                         {product.foto_produk ? (
                                             <img
                                                 src={product.foto_produk}
