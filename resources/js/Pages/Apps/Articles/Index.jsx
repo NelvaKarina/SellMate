@@ -51,6 +51,7 @@ export default function Index({ articles, flash }) {
             confirmButtonText: 'Ya, hapus!',
             cancelButtonText: 'Batal'
         }).then((result) => {
+<<<<<<< HEAD
             if (result.isConfirmed) {
                 const loadingToast = toast.loading('Menghapus artikel...');
                 router.delete(`/apps/articles/${slug}`, {
@@ -62,6 +63,16 @@ export default function Index({ articles, flash }) {
                         toast.dismiss(loadingToast);
                         toast.error('Gagal menghapus artikel!');
                     }
+=======
+            if (result.isConfirmed) {-
+                router.delete(`/apps/articles/${id}`);
+                Swal.fire({
+                    title: 'Berhasil!',
+                    text: 'Data artikel berhasil dihapus.',
+                    icon: 'success',
+                    timer: 1000,
+                    showConfirmButton: false,
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                 });
             }
         });
@@ -70,7 +81,10 @@ export default function Index({ articles, flash }) {
     return (
         <>
             <Head title="Katalog Artikel" />
+<<<<<<< HEAD
             <Toaster position="top-right" />
+=======
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
 
             <div className="flex justify-between items-center mb-10">
                 <div className="flex flex-col">
@@ -80,7 +94,11 @@ export default function Index({ articles, flash }) {
                 {hasAnyPermission(['articles-create']) && (
                     <Link
                         href="/apps/articles/create"
+<<<<<<< HEAD
                         className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-purple-700 transition"
+=======
+                        className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition"
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                     >
                         Tambah Artikel
                     </Link>
@@ -90,7 +108,11 @@ export default function Index({ articles, flash }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {(Array.isArray(articles) ? articles : []).map((article) => (
                     <div key={article.id} className="relative">
+<<<<<<< HEAD
                         <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 flex flex-col border-2 border-[#D4A8EF] dark:border-gray-900 shadow-sm">
+=======
+                        <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 flex flex-col border border-[#D4A8EF] dark:border-gray-900 shadow-sm">
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                             <div className="mb-4 rounded-2xl overflow-hidden flex items-center justify-center bg-gray-200 dark:bg-gray-800 h-[200px]">
                                 {article.thumbnail ? (
                                     <img
@@ -118,7 +140,11 @@ export default function Index({ articles, flash }) {
                             
                             <div className="flex justify-between items-center">
                                 <Link
+<<<<<<< HEAD
                                     href={`/apps/articles/${article.slug}`}
+=======
+                                    href={`/apps/articles/${article.id}`}
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                                     className="text-indigo-600 dark:text-indigo-400 text-sm underline"
                                 >
                                     Baca Selengkapnya
@@ -127,6 +153,7 @@ export default function Index({ articles, flash }) {
                                 <div className="flex gap-1">
                                     {hasAnyPermission(['articles-delete']) && (
                                         <button
+<<<<<<< HEAD
                                             onClick={() => handleDelete(article.slug)}
                                             className="text-red-900 p-2 rounded-full hover:bg-red-200 transition transform hover:scale-110"
                                         >
@@ -148,6 +175,21 @@ export default function Index({ articles, flash }) {
                                         className="w-[26px] h-[26px]"
                                         />
                                         </button>
+=======
+                                            onClick={() => handleDelete(article.id)}
+                                            className="text-red-900 p-2 rounded-full hover:bg-red-200 transition transform hover:scale-110"
+                                        >
+                                            <IconTrash size={20} />
+                                        </button>
+                                    )}
+                                    {hasAnyPermission(['articles-update']) && (
+                                        <Link
+                                            href={`/apps/articles/${article.id}/edit`}
+                                            className="text-gray-700 p-2 rounded-full hover:bg-gray-400 transition transform hover:scale-110"
+                                        >
+                                            <IconEdit size={20} />
+                                        </Link>
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                                     )}
                                 </div>
                             </div>

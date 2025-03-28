@@ -158,14 +158,22 @@ export default function Index({ videos, flash }) {
             <Toaster position="top-right" />
 
             <div className="flex justify-between items-center mb-10">
+<<<<<<< HEAD
                 <div className="flex flex-col">
+=======
+            <div className="flex flex-col">
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                     <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Katalog Video</h1>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Kelola video dengan mudah</p>
                 </div>
                 {hasAnyPermission(["videos-create"]) && (
                     <Link
                         href="/apps/videos/create"
+<<<<<<< HEAD
                         className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-purple-700 transition"
+=======
+                        className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition"
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                     >
                         Tambah Video
                     </Link>
@@ -174,6 +182,7 @@ export default function Index({ videos, flash }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {(Array.isArray(videos) ? videos : []).map((video) => (
+<<<<<<< HEAD
                     <div key={video.id} className="relative border-2 border-[#D4A8EF] p-4 bg-white rounded-2xl shadow-md">
                         <div className="relative mb-4 rounded-2xl overflow-hidden flex items-center justify-center bg-gray-200 dark:bg-gray-800 h-[200px] cursor-pointer">
                             {loadingThumbnails[video.id] ? (
@@ -184,6 +193,36 @@ export default function Index({ videos, flash }) {
                                     alt={video.title}
                                     className="w-full h-full object-cover"
                                 />
+=======
+                    <div key={video.id} className="relative border border-[#D4A8EF] p-4 bg-white rounded-2xl shadow-md">
+                        <div
+                            className="mb-4 rounded-2xl overflow-hidden flex items-center justify-center bg-gray-200 dark:bg-gray-800 h-[200px] cursor-pointer"
+                            onClick={() => handleTogglePlay(video.id)}
+                        >
+                            {video.video_file ? (
+                                playingVideoId === video.id ? (
+                                    <video
+                                        controls
+                                        autoPlay
+                                        muted
+                                        className="w-full h-full object-cover"
+                                    >
+                                        <source
+                                            src={ video.video_file.startsWith('http')
+                                                ? video.video_file
+                                                : `/storage/${video.video_file}`}
+                                            type="video/mp4"
+                                        />
+                                        Browser tidak mendukung video.
+                                    </video>
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center relative">
+                                        <div className="absolute inset-0 flex items-center justify-center">
+                                            <IconVideo size={48} className="text-gray-400" />
+                                        </div>
+                                    </div>
+                                )
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                             ) : (
                                 <div className="absolute inset-0 flex items-center justify-center bg-gray-200 dark:bg-gray-700">
                                     <IconPlayerPlay size={48} className="text-gray-400" />
@@ -212,17 +251,26 @@ export default function Index({ videos, flash }) {
                         </span>
 
                         {/* Tombol Aksi */}
+<<<<<<< HEAD
                         <div className="flex gap-1 justify-end mt-4">
+=======
+                        <div className="flex gap-2 justify-end mt-4">
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                             {/* Tombol Generate Link */}
                             <button
                                 onClick={() => handleGenerateLink(video)}
                                 className="text-indigo-900 p-2 rounded-full hover:bg-indigo-200 transition transform hover:scale-110"
                             >
+<<<<<<< HEAD
                                 <IconLink size={26} />
+=======
+                                <IconLink size={20} />
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                             </button>
 
                             {/* Tombol Edit */}
                             {hasAnyPermission(["videos-update"]) && (
+<<<<<<< HEAD
                                 <button
                                     onClick={() => handleEdit(video.id)}
                                     className="text-gray-700 p-2 rounded-full hover:bg-gray-400 transition transform hover:scale-110"
@@ -233,6 +281,14 @@ export default function Index({ videos, flash }) {
                                         className="w-[26px] h-[26px]"
                                     />
                                 </button>
+=======
+                                <Link
+                                    href={`/apps/videos/${video.id}/edit`}
+                                    className="text-gray-700 p-2 rounded-full hover:bg-gray-400 transition transform hover:scale-110"
+                                >
+                                    <IconEdit size={20} />
+                                </Link>
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                             )}
 
                             {/* Tombol Hapus */}
@@ -241,11 +297,15 @@ export default function Index({ videos, flash }) {
                                     onClick={() => handleDelete(video.id)}
                                     className="text-red-900 p-2 rounded-full hover:bg-red-200 transition transform hover:scale-110"
                                 >
+<<<<<<< HEAD
                                     <img 
                                         src="/images/delete.svg" 
                                         alt="Delete Icon" 
                                         className="w-[26] h-[26px]"
                                     />
+=======
+                                    <IconTrash size={20} />
+>>>>>>> efef0a33c9f28b4ee3c8fb0c6a0ff3615ca50151
                                 </button>
                             )}
                         </div>
