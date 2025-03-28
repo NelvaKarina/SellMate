@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IconReceipt, IconCoin } from '@tabler/icons-react';
+import { IconReceipt } from '@tabler/icons-react';
 import WidgetUser from '@/Components/WidgetUser';
 import axios from 'axios';
 
@@ -48,15 +48,15 @@ export default function AverageRevenue() {
                 <div className="flex justify-between gap-3">
                     <WidgetUser
                         title={'Transaksi'}
-                        color={'text-gray-700 dark:md:bg-gray-800 dark:md:text-gray-200'}
-                        icon={<IconReceipt size={'28'} strokeWidth={'1.5'} />}
+                        color={'text-gray-800 dark:md:bg-gray-800 dark:md:text-gray-200'}
+                        icon={<img src="/images/transaksi.svg" width="28" height="28" alt="Transaksi icon" />}
                         total={totalOmzet}
                         className="w-full"
                     />
                     <WidgetUser
                         title={'Komisi'}
-                        color={'text-gray-700 dark:md:bg-gray-800 dark:md:text-gray-200'}
-                        icon={<IconCoin size={'28'} strokeWidth={'1.5'} />}
+                        color={'text-gray-800 dark:md:bg-gray-800 dark:md:text-gray-200'}
+                        icon={<img src="/images/komisi.svg" width="28" height="28" alt="Komisi icon" />}
                         total={totalKomisi}
                         className="w-full"
                     />

@@ -127,7 +127,7 @@ export default function Edit({ video }) {
                             type="submit"
                             label="Simpan Perubahan"
                             disabled={processing}
-                            className="bg-[#AA51DF] hover:bg-opacity-90 disabled:opacity-50 px-8"
+                            className="bg-[#AA51DF] hover:bg-purple-700 disabled:opacity-50 px-8"
                         />
                     </div>
                 </form>

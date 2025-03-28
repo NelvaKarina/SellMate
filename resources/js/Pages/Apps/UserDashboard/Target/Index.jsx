@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Head, Link } from '@inertiajs/react';
-import { IconArrowLeft, IconTarget, IconEdit, IconTrash, IconPlus, IconCoin } from '@tabler/icons-react';
+import { IconArrowLeft, IconTarget, IconEdit, IconPlus, IconCoin } from '@tabler/icons-react';
 import axios from 'axios';
 
 export default function Index() {
@@ -49,7 +49,11 @@ export default function Index() {
                         </Link>
                     </div>
                     <div className="text-center py-8">
-                        <IconTarget size={48} className="text-gray-400 mx-auto mb-4" />
+                        <img 
+                            src="/images/target.svg"  
+                            alt="Target Icon"
+                            className="w-[50px] h-[50px] mx-auto mb-4" 
+                        />
                         <p className="text-gray-500">Belum ada target yang dibuat</p>
                         <Link
                             href={route('apps.user.target.edit')}
@@ -88,7 +92,11 @@ export default function Index() {
                         </div>
                     ) : !target ? (
                         <div className="text-center py-8">
-                            <IconTarget size={48} className="text-gray-400 mx-auto mb-4" />
+                            <img 
+                                src="/images/target.svg" 
+                                alt="Target Icon" 
+                                className="w-12 h-12 mx-auto mb-4" 
+                            />
                             <p className="text-gray-500">Belum ada target yang dibuat</p>
                             <Link
                                 href={route('apps.user.target.edit')}
@@ -115,7 +123,11 @@ export default function Index() {
                                         </h3>
                                     </div>
                                     <div>
-                                        <IconTarget size={80} className="text-gray-800 dark:text-gray-400" />
+                                        <img 
+                                            src="/images/target.svg" 
+                                            alt="Target Icon" 
+                                            className="w-20 h-20 text-gray-800 dark:text-gray-400" 
+                                        />
                                     </div>
                                 </div>
 
@@ -160,11 +172,19 @@ export default function Index() {
                             {/* Action Buttons - moved outside container */}
                             <div className="flex justify-end mt-2 space-x-2">
                                 <button className="p-2">
-                                    <IconTrash size={30} className="text-[#AA1818]" />
+                                    <img 
+                                        src="/images/delete.svg" 
+                                        alt="Delete Icon" 
+                                        className="w-[30px] h-[30px]"
+                                    />
                                 </button>
                                 <div className="w-px h-6 bg-gray-600 dark:bg-gray-400 self-center"></div>
                                 <Link href={route('apps.user.target.edit')} className="p-2">
-                                    <IconEdit size={30} className="text-black"/>
+                                    <img 
+                                        src="/images/edit.svg" 
+                                        alt="Edit Icon" 
+                                        className="w-[30px] h-[30px]"
+                                    />
                                 </Link>
                             </div>
                         </>
@@ -181,13 +201,21 @@ export default function Index() {
                             href="/apps/user-dashboard/target/edit"
                             className="flex items-center gap-2 bg-purple-700 text-white p-2.5 rounded-full shadow-lg hover:bg-purple-800 transition-colors"
                         >
-                            <IconTarget size={32} />
+                            <img 
+                                src="/images/target-button.svg" 
+                                alt="Target Icon" 
+                                className="w-8 h-8" 
+                            />
                         </Link>
                         <Link
                             href="/apps/user-dashboard/omzet"
                             className="flex items-center gap-2 bg-purple-700 text-white p-2.5 rounded-full shadow-lg hover:bg-purple-800 transition-colors"
                         >
-                            <IconCoin size={32} />
+                            <img 
+                                src="/images/add-omzet.svg" 
+                                alt="Omzet Icon" 
+                                className="w-8 h-8" 
+                            />
                         </Link>
                     </div>
 

@@ -80,7 +80,7 @@ export default function Index({ articles, flash }) {
                 {hasAnyPermission(['articles-create']) && (
                     <Link
                         href="/apps/articles/create"
-                        className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition"
+                        className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-purple-700 transition"
                     >
                         Tambah Artikel
                     </Link>
@@ -90,7 +90,7 @@ export default function Index({ articles, flash }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {(Array.isArray(articles) ? articles : []).map((article) => (
                     <div key={article.id} className="relative">
-                        <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 flex flex-col border border-[#D4A8EF] dark:border-gray-900 shadow-sm">
+                        <div className="bg-white dark:bg-gray-900 rounded-2xl p-4 flex flex-col border-2 border-[#D4A8EF] dark:border-gray-900 shadow-sm">
                             <div className="mb-4 rounded-2xl overflow-hidden flex items-center justify-center bg-gray-200 dark:bg-gray-800 h-[200px]">
                                 {article.thumbnail ? (
                                     <img
@@ -130,7 +130,11 @@ export default function Index({ articles, flash }) {
                                             onClick={() => handleDelete(article.slug)}
                                             className="text-red-900 p-2 rounded-full hover:bg-red-200 transition transform hover:scale-110"
                                         >
-                                            <IconTrash size={20} />
+                                        <img 
+                                            src="/images/delete.svg" 
+                                            alt="Delete Icon" 
+                                            className="w-[26] h-[26px]"
+                                        />
                                         </button>
                                     )}
                                     {hasAnyPermission(['articles-update']) && (
@@ -138,7 +142,11 @@ export default function Index({ articles, flash }) {
                                             onClick={() => handleEdit(article.slug)}
                                             className="text-gray-700 p-2 rounded-full hover:bg-gray-400 transition transform hover:scale-110"
                                         >
-                                            <IconEdit size={20} />
+                                        <img 
+                                        src="/images/edit.svg" 
+                                        alt="Edit Icon" 
+                                        className="w-[26px] h-[26px]"
+                                        />
                                         </button>
                                     )}
                                 </div>

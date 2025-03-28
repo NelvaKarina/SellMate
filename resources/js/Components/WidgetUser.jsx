@@ -16,7 +16,7 @@ export default function WidgetUser({
         {icon}
       </div>
       <div className="ml-4 flex flex-col">
-        <span className="font-semibold text-gray-600 text-sm">
+        <span className="font-semibold text-gray-800 text-sm">
           {title}
         </span>
         <span className="whitespace-nowrap font-semibold font-mono text-gray-600 dark:text-white text-xs">

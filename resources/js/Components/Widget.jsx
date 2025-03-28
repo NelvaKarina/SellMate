@@ -8,7 +8,7 @@ export default function Widget({title, icon, className, total, color}) {
                 <div className={`p-2 rounded-full ${color}`}>
                     {icon}
                 </div>
-                <span className="font-semibold text-gray-700 dark:text-gray-200 text-sm">
+                <span className="font-semibold text-gray-900 dark:text-gray-200 text-sm">
                     {title}
                 </span>
             </div>

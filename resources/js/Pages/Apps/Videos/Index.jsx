@@ -165,7 +165,7 @@ export default function Index({ videos, flash }) {
                 {hasAnyPermission(["videos-create"]) && (
                     <Link
                         href="/apps/videos/create"
-                        className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition"
+                        className="bg-[#AA51DF] text-white px-4 py-2 rounded-full hover:bg-purple-700 transition"
                     >
                         Tambah Video
                     </Link>
@@ -174,7 +174,7 @@ export default function Index({ videos, flash }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {(Array.isArray(videos) ? videos : []).map((video) => (
-                    <div key={video.id} className="relative border border-[#D4A8EF] p-4 bg-white rounded-2xl shadow-md">
+                    <div key={video.id} className="relative border-2 border-[#D4A8EF] p-4 bg-white rounded-2xl shadow-md">
                         <div className="relative mb-4 rounded-2xl overflow-hidden flex items-center justify-center bg-gray-200 dark:bg-gray-800 h-[200px] cursor-pointer">
                             {loadingThumbnails[video.id] ? (
                                 <div className="absolute inset-0 animate-pulse bg-gray-200 dark:bg-gray-700" />
@@ -212,13 +212,13 @@ export default function Index({ videos, flash }) {
                         </span>
 
                         {/* Tombol Aksi */}
-                        <div className="flex gap-2 justify-end mt-4">
+                        <div className="flex gap-1 justify-end mt-4">
                             {/* Tombol Generate Link */}
                             <button
                                 onClick={() => handleGenerateLink(video)}
                                 className="text-indigo-900 p-2 rounded-full hover:bg-indigo-200 transition transform hover:scale-110"
                             >
-                                <IconLink size={20} />
+                                <IconLink size={26} />
                             </button>
 
                             {/* Tombol Edit */}
@@ -227,7 +227,11 @@ export default function Index({ videos, flash }) {
                                     onClick={() => handleEdit(video.id)}
                                     className="text-gray-700 p-2 rounded-full hover:bg-gray-400 transition transform hover:scale-110"
                                 >
-                                    <IconEdit size={20} />
+                                    <img 
+                                        src="/images/edit.svg" 
+                                        alt="Edit Icon" 
+                                        className="w-[26px] h-[26px]"
+                                    />
                                 </button>
                             )}
 
@@ -237,7 +241,11 @@ export default function Index({ videos, flash }) {
                                     onClick={() => handleDelete(video.id)}
                                     className="text-red-900 p-2 rounded-full hover:bg-red-200 transition transform hover:scale-110"
                                 >
-                                    <IconTrash size={20} />
+                                    <img 
+                                        src="/images/delete.svg" 
+                                        alt="Delete Icon" 
+                                        className="w-[26] h-[26px]"
+                                    />
                                 </button>
                             )}
                         </div>

@@ -105,11 +105,11 @@ export default function Create() {
 
                         {/* File Video section */}
                         <div className="p-4 bg-white dark:bg-gray-900 rounded-lg border border-[#D4A8EF]">
-                            <div className="flex flex-col gap-2">
-                            <label className="text-2xl font-semibold text-gray-900">
-                                        Thumbnail Video
-                                    </label>
-                                <div className="border-2 border-dashed border-[#D4A8EF] dark:border-gray-800 rounded-lg p-4 text-center">
+                            <div className="flex flex-col h-full gap-2">
+                                <label className="text-2xl font-semibold text-gray-900">
+                                    Thumbnail Video
+                                </label>
+                                <div className="border-2 border-dashed border-[#D4A8EF] dark:border-gray-800 rounded-lg p-4 text-center h-full">
                                     <input
                                         type="file"
                                         onChange={handleFileChange}
@@ -119,7 +119,7 @@ export default function Create() {
                                     />
                                     <label
                                         htmlFor="video-upload"
-                                        className="cursor-pointer flex flex-col items-center justify-center min-h-[200px]"
+                                        className="cursor-pointer flex flex-col items-center justify-center h-full"
                                     >
                                         {previewVideo ? (
                                             <video controls className="w-full h-auto rounded-lg">
@@ -157,7 +157,7 @@ export default function Create() {
                             type="submit"
                             label={processing ? 'Menyimpan...' : 'Simpan'}
                             disabled={processing}
-                            className="bg-[#AA51DF] hover:bg-indigo-700 disabled:opacity-50"
+                            className="bg-[#AA51DF] hover:bg-purple-700 disabled:opacity-50"
                         />
                     </div>
                 </form>

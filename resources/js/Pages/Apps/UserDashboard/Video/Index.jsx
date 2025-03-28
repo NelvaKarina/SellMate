@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Head, Link } from '@inertiajs/react';
-import { IconChevronLeft, IconSearch, IconVideo, IconPlayerPlay, IconEye, IconShare, IconUser, IconBrandFacebook, IconBrandTwitter, IconBrandWhatsapp, IconCopy, IconX } from '@tabler/icons-react';
+import { IconArrowLeft, IconVideo, IconPlayerPlay, IconEye, IconShare, IconUser, IconBrandFacebook, IconBrandTwitter, IconBrandWhatsapp, IconCopy, IconX } from '@tabler/icons-react';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function Index({ videos }) {
@@ -193,16 +193,21 @@ export default function Index({ videos }) {
                         <div className="flex items-center gap-4">
                             <Link 
                                 href={route('apps.user.dashboard')} 
-                                className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+                                className="text-gray-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
                             >
-                                <IconChevronLeft size={24} strokeWidth={1.5} />
+                                <IconArrowLeft size={24} strokeWidth={1.5} />
                             </Link>
                             <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                                Videos
+                                Video
                             </h1>
                         </div>
-                        <button className="p-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
-                            <IconSearch size={24} strokeWidth={1.5} />
+                        <button className="p-2 text-gray-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">
+                            <img 
+                                src="/images/search.svg" 
+                                alt="Search"
+                                width={24}
+                                height={24}
+                            />
                         </button>
                     </div>
 
@@ -273,7 +278,7 @@ export default function Index({ videos }) {
                                                     e.stopPropagation();
                                                     handleShare(video.id, video.slug);
                                                 }}
-                                                className="flex items-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+                                                className="flex items-center text-gray-800 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
                                             >
                                                 <IconShare size={14} strokeWidth={1.5} className="mr-1" />
                                                 <span>Share</span>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, usePage } from '@inertiajs/react';
-import { IconCategory2, IconBrandZoom, IconBook, IconLayout2, IconPackage, IconVideo, IconArticle } from '@tabler/icons-react';
+import { IconCategory2, IconBook, IconVideo, IconArticle } from '@tabler/icons-react';
 
 export default function SpeedDial({ isUserAccess, className = '', isOpenByDefault = false, isMediumScreen = false }) {
     const [isSpeedDialOpen, setIsSpeedDialOpen] = useState(isOpenByDefault);
@@ -50,14 +50,22 @@ export default function SpeedDial({ isUserAccess, className = '', isOpenByDefaul
                                     href={route('apps.user.video')} 
                                     className={`flex flex-col items-center gap-1 hover:scale-110 transition-transform ${getLinkStyles('/apps/user/video')}`}
                                 >
-                                    <IconBrandZoom size={20} strokeWidth={1.5} />
+                                    <img 
+                                        src="/images/video.svg" 
+                                        alt="Video icon" 
+                                        className="w-5 h-5"
+                                    />
                                     <span className="text-[10px] font-medium">Video</span>
                                 </Link>
                                 <Link 
                                     href={route('apps.user.article')} 
                                     className={`flex flex-col items-center gap-1 hover:scale-110 transition-transform ${getLinkStyles('/apps/user/article')}`}
                                 >
-                                    <IconBook size={20} strokeWidth={1.5} />
+                                    <img 
+                                        src="/images/article.svg" 
+                                        alt="Article icon" 
+                                        className="w-5 h-5"
+                                    />
                                     <span className="text-[10px] font-medium">Artikel</span>
                                 </Link>
                             </>
@@ -68,28 +76,44 @@ export default function SpeedDial({ isUserAccess, className = '', isOpenByDefaul
                                     href="/apps/dashboard" 
                                     className={`flex flex-col items-center gap-1 hover:scale-110 transition-transform md:hidden ${getLinkStyles('/apps/dashboard')}`}
                                 >
-                                    <IconLayout2 size={20} strokeWidth={1.5} />
+                                     <img 
+                                        src="/images/home.svg" 
+                                        alt="Home icon" 
+                                        className="w-6 h-6"
+                                    />
                                     <span className="text-[10px] font-medium">Home</span>
                                 </Link>
                                 <Link 
                                     href="/apps/products" 
                                     className={`flex flex-col items-center gap-1 hover:scale-110 transition-transform ${getLinkStyles('/apps/products')}`}
                                 >
-                                    <IconPackage size={20} strokeWidth={1.5} />
+                                    <img 
+                                        src="/images/product.svg" 
+                                        alt="Product icon" 
+                                        className="w-6 h-6"
+                                    />
                                     <span className="text-[10px] font-medium">Products</span>
                                 </Link>
                                 <Link 
                                     href="/apps/videos" 
                                     className={`flex flex-col items-center gap-1 hover:scale-110 transition-transform ${getLinkStyles('/apps/videos')}`}
                                 >
-                                    <IconVideo size={20} strokeWidth={1.5} />
+                                    <img 
+                                        src="/images/video.svg" 
+                                        alt="Video icon" 
+                                        className="w-6 h-6"
+                                    />
                                     <span className="text-[10px] font-medium">Videos</span>
                                 </Link>
                                 <Link 
                                     href="/apps/articles" 
                                     className={`flex flex-col items-center gap-1 hover:scale-110 transition-transform ${getLinkStyles('/apps/articles')}`}
                                 >
-                                    <IconArticle size={20} strokeWidth={1.5} />
+                                    <img 
+                                        src="/images/article.svg" 
+                                        alt="Article icon" 
+                                        className="w-6 h-6"
+                                    />
                                     <span className="text-[10px] font-medium">Articles</span>
                                 </Link>
                             </>
@@ -103,7 +127,11 @@ export default function SpeedDial({ isUserAccess, className = '', isOpenByDefaul
                         href={userAccess ? "/apps/user-dashboard" : "/apps/dashboard"}
                         className={`relative text-white transition-all duration-200 hover:scale-110 flex flex-col items-center justify-center ${getLinkStyles('/apps/dashboard')}`}
                     >
-                        <IconCategory2 size={20} strokeWidth={1.5} />
+                        <img 
+                            src="/images/home.svg" 
+                            alt="Home icon" 
+                            className="w-6 h-6"
+                        />
                         <span className="text-[10px] font-medium">Home</span>
                     </Link>
                 ) : (

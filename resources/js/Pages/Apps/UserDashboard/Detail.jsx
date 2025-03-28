@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Head, Link } from '@inertiajs/react';
-import { IconPackage, IconUser, IconChevronLeft, IconChevronRight, IconPlus, IconTarget, IconCoin } from '@tabler/icons-react';
+import { IconPackage, IconUser, IconChevronRight, IconPlus } from '@tabler/icons-react';
 import axios from 'axios';
 
 export default function Detail({ type }) {
@@ -793,13 +793,21 @@ export default function Detail({ type }) {
                                 href="/apps/user-dashboard/target/edit"
                                 className="flex items-center gap-2 bg-purple-700 text-white p-2.5 rounded-full shadow-lg hover:bg-purple-800 transition-colors"
                             >
-                                <IconTarget size={32} />
+                                <img 
+                                src="/images/target-button.svg" 
+                                alt="Target Icon" 
+                                className="w-8 h-8" 
+                            />
                             </Link>
                             <Link
                                 href="/apps/user-dashboard/omzet"
                                 className="flex items-center gap-2 bg-purple-700 text-white p-2.5 rounded-full shadow-lg hover:bg-purple-800 transition-colors"
                             >
-                                <IconCoin size={32} />
+                                <img 
+                                src="/images/add-omzet.svg" 
+                                alt="Omzet Icon" 
+                                className="w-8 h-8" 
+                            />
                             </Link>
                         </div>
 

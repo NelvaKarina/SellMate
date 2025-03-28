@@ -3,7 +3,7 @@ import Table from '@/Components/Table';
 import Widget from '@/Components/Widget';
 import AppLayout from '@/Layouts/AppLayout';
 import { Head } from '@inertiajs/react';
-import { IconBox, IconWallet, IconUsers, IconUser, IconDownload, IconFilter, IconSearch, IconCalendar, IconX } from '@tabler/icons-react';
+import { IconUser, IconDownload, IconFilter, IconCalendar, IconX } from '@tabler/icons-react';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Menu } from '@headlessui/react';
@@ -248,7 +248,7 @@ export default function Dashboard({ auth }) {
     const FilterDropdown = ({ table, currentFilter, onFilterChange, onDateChange }) => {
         return (
             <Menu as="div" className="relative text-gray-600">
-                <Menu.Button className={`inline-flex items-center gap-2 px-3 py-2.5 text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-950 border-2 border-[#D4A8EF] rounded-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-200 ${currentFilter.type !== 'all' ? 'ring-2 ring-blue-500/30' : ''}`}>
+                <Menu.Button className={`inline-flex items-center gap-2 px-3 py-2.5 text-sm text-gray-900 dark:text-gray-200 bg-white dark:bg-gray-950 border-2 border-[#D4A8EF] rounded-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-200 ${currentFilter.type !== 'all' ? 'ring-2 ring-blue-500/30' : ''}`}>
                     <IconFilter size={16} strokeWidth={1.5} />
                 </Menu.Button>
                 <Menu.Items className="absolute right-0 mt-2 w-72 bg-white dark:bg-gray-900 rounded-lg shadow-lg border dark:border-gray-800 py-1 z-50">
@@ -527,7 +527,7 @@ export default function Dashboard({ auth }) {
                             onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
                             className="flex items-center gap-2 bg-white dark:bg-gray-950 border-2 border-[#D4A8EF] rounded-lg px-3 py-1.5 text-sm text-gray-700 dark:text-gray-200"
                         >
-                            <IconCalendar size={16} className="text-gray-500" />
+                            <IconCalendar size={18} className="text-gray-700" />
                             <span className="min-w-[140px]">{formatDateRange()}</span>
                             {exportDateRange[0].startDate && exportDateRange[0].endDate && (
                                 <IconX
@@ -570,7 +570,7 @@ export default function Dashboard({ auth }) {
                             {exportLoading ? 'Mengexport...' : (
                                 <>
                                     Export
-                                    <IconDownload size={16} strokeWidth={1.5} />
+                                    <IconDownload size={18} strokeWidth={1.5} />
                                 </>
                             )}
                         </Menu.Button>
@@ -613,20 +613,17 @@ export default function Dashboard({ auth }) {
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-4'>
                         <Widget
                             title={'Total Omzet'}
-                            color={'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200'}
-                            icon={<IconWallet size={'20'} strokeWidth={'1.5'}/>}
+                            icon={<img src="/images/transaksi.svg" width="28" height="28" alt="Transaksi icon" />}
                             total={loading ? 'Loading...' : totalOmzet}
                         />
                 <Widget
                             title={'Produk Tefa'}
-                    color={'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200'}
-                    icon={<IconBox size={'20'} strokeWidth={'1.5'}/>}
+                            icon={<img src="/images/product-admin.svg" width="28" height="28" alt="Product icon" />}
                             total={loading ? 'Loading...' : `${totalProducts} Produk`}
                 />
                 <Widget
                             title={'Total User'}
-                    color={'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200'}
-                    icon={<IconUsers size={'20'} strokeWidth={'1.5'}/>}
+                            icon={<img src="/images/user.svg" width="28" height="28" alt="User icon" />}
                             total={loading ? 'Loading...' : `${totalUsers} User `}
                 />
             </div>
@@ -645,7 +642,12 @@ export default function Dashboard({ auth }) {
                                         className="py-2 px-4 pr-11 block w-full rounded-lg text-sm border-2 border-[#D4A8EF] focus:outline-none focus:ring-0 focus:ring-gray-400 text-gray-700 bg-white focus:border-[#D4A8EF] dark:focus:ring-gray-500 dark:focus:border-[#D4A8EF] dark:text-gray-200 dark:bg-gray-950 dark:border-[#D4A8EF]"
                                     />
                                     <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none pr-4">
-                                        <IconSearch className="text-gray-500 w-5 h-5"/>
+                                    <img 
+                                        src="/images/search.svg" 
+                                        alt="Search"
+                                        width={16}
+                                        height={16}
+                                    />
                                     </div>
                                 </div>
                                 <FilterDropdown 
@@ -761,7 +763,12 @@ export default function Dashboard({ auth }) {
                                         className="py-2 px-4 pr-11 block w-full rounded-lg text-sm border-2 border-[#D4A8EF] focus:outline-none focus:ring-0 focus:ring-gray-400 text-gray-700 bg-white focus:border-[#D4A8EF] dark:focus:ring-gray-500 dark:focus:border-[#D4A8EF] dark:text-gray-200 dark:bg-gray-950 dark:border-[#D4A8EF]"
                                     />
                                     <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none pr-4">
-                                        <IconSearch className="text-gray-500 w-5 h-5"/>
+                                        <img 
+                                            src="/images/search.svg" 
+                                            alt="Search"
+                                            width={16}
+                                            height={16}
+                                        />
                                     </div>
                                 </div>
                                 <FilterDropdown 
